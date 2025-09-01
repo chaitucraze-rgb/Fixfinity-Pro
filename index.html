@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixfinity Pro | Mobile Repair & Delivery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium mobile repair and home delivery service.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">Fixfinity Pro</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#prices">Prices</a>
+      <a href="#book">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Premium Mobile Repair.<br>Delivered to Your Doorstep.</h1>
+      <p>Book, track, and get your mobile fixed with luxury service and transparent pricing.</p>
+      <a href="#book" class="main-btn">Book a Repair</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Mobile Repair" />
+    </div>
+  </section>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Screen Replacement" />
+        <h3>Screen Replacement</h3>
+        <p>Cracked or broken screen? We use only premium parts for a flawless finish.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Battery Replacement" />
+        <h3>Battery Replacement</h3>
+        <p>Fast, safe battery swaps to keep your phone powered all day.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Speaker/Mic Repair" />
+        <h3>Speaker & Mic Repair</h3>
+        <p>Crystal clear calls and sound with expert component restoration.</p>
+      </div>
+    </div>
+  </section>
+  <section class="prices" id="prices">
+    <h2>Estimated Prices</h2>
+    <div id="prices-table"></div>
+    <p class="note">Prices are estimates. Final quote depends on model/condition. Book for exact price.</p>
+  </section>
+  <section class="book" id="book">
+    <h2>Book Your Repair</h2>
+    <form action="https://getform.io/f/aolzzleb" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="phone" placeholder="Mobile Number" required>
+      <input type="text" name="model" placeholder="Mobile Model" required>
+      <select name="problem" required>
+        <option value="">Select Issue</option>
+        <option value="Screen Damage">Screen Damage</option>
+        <option value="Battery Issue">Battery Issue</option>
+        <option value="Speaker/Mic">Speaker/Mic</option>
+        <option value="Other">Other/Not Sure</option>
+      </select>
+      <textarea name="address" placeholder="Pickup Address" required></textarea>
+      <textarea name="details" placeholder="Extra Details"></textarea>
+      <button type="submit" class="main-btn">Book Now</button>
+    </form>
+  </section>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div>
+      <p><strong>Email:</strong> <a href="mailto:profixfinity@gmail.com">yourmail@example.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/919182809917">+91-9182809917</a></p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Fixfinity Pro</p>
+  </footer>
+  <script>
+    // Maxbhi prices (hidden from users)
+    const maxbhiPrices = [
+      { model: "Redmi Note 10", part: "Screen", price: 1500 },
+      { model: "Samsung Galaxy A52", part: "Battery", price: 1200 },
+      { model: "iPhone 7", part: "Speaker", price: 800 },
+      { model: "Vivo Y20", part: "Screen", price: 1300 },
+      // Add more entries here
+    ];
+    function renderPrices() {
+      let html = `<table><thead><tr>
+        <th>Mobile Model</th><th>Part</th><th>Estimated Price (₹)</th>
+      </tr></thead><tbody>`;
+      for (const item of maxbhiPrices) {
+        html += `<tr>
+          <td>${item.model}</td>
+          <td>${item.part}</td>
+          <td>${item.price * 2}</td>
+        </tr>`;
+      }
+      html += `</tbody></table>`;
+      document.getElementById('prices-table').innerHTML = html;
+    }
+    renderPrices();
+  </script>
+</body>
+</html>
